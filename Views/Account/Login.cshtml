@@ -1,0 +1,59 @@
+@model A07_UTS.ViewModel.LoginViewModel
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/_main.css" />
+    <link rel="stylesheet" href="~/js/_main.js" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" />
+
+</head>
+<body>
+<div class="login-container">
+    <div class="right-panel">
+        <div class="login-card">
+            <h2>Login</h2>
+            @if (ViewBag.Message != null)
+            {
+                <div class="alert alert-success" role="alert">
+                    @ViewBag.Message
+                </div>
+            }
+            <form asp-action="Login">
+                <input type="hidden" asp-for="ReturnUrl" />
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                
+                <div class="form-group mt-2">
+                    <input asp-for="Username" class="form-control" placeholder="Username" />
+                    <span asp-validation-for="Username" class="text-danger"></span>
+                </div>
+                <div class="form-group mt-2">
+                    <input asp-for="Password" class="form-control" placeholder="Password" />
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+               <div class="form-group">
+                    <label asp-for="RememberMe" class="form-check-label d-flex align-items-center">
+                        <input asp-for="RememberMe" class="form-check-input me-2"> Remember Me
+                        <a class="Forgot ms-auto" href="#">Forget Your Password?</a>
+                    </label>
+                </div>
+                <div class="button-group">
+                    <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+                </div>
+                <div class="form-group">
+                    <label>Dont have account?</label>
+                    <a asp-asp-controller="Account" asp-action="Register">Register</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+
+@section Scripts {
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+}

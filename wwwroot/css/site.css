@@ -1,0 +1,43 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+/* Background Gradient */
+body {
+  background-color: #ffffff;
+  background: linear-gradient(to right, #e2e2e2, #c9d6ff);
+  margin-bottom: 60px;
+}
+
+table {
+  background-color: #ffffff;
+  border-radius: 6px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.10);
+  max-width: auto;
+  min-height: auto;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: #ffffff;
+  white-space: nowrap;
+  line-height: 60px;
+}
+

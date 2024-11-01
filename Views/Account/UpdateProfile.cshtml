@@ -1,0 +1,59 @@
+@model A07_UTS.Models.User
+@{
+    ViewData["Title"] = "Edit Profile";
+}
+
+<form asp-action="EditProfile" method="post">
+    <div class="form-horizontal">
+        <h4>Edit Profile</h4>
+        <hr />
+        @if (ViewBag.Message != null)
+        {
+            <div class="alert alert-success">
+                @ViewBag.Message
+            </div>
+        }
+
+        @if (ViewBag.error != null)
+        {
+            <div class="alert alert-danger">
+                @ViewBag.error
+            </div>
+        }
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group mt-2">
+                <label asp-for="Username" class="col-md-2 control-label">Username</label>
+                <div class="col-md-6">
+                    <input asp-for="Username" class="form-control" />
+                    <span asp-validation-for="Username" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group mt-2">
+                <label asp-for="Email" class="col-md-2 control-label">Email</label>
+                <div class="col-md-6">
+                    <input asp-for="Email" class="form-control" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group mt-2">
+                <label asp-for="Contact" class="col-md-2 control-label">Contact</label>
+                <div class="col-md-6">
+                    <input asp-for="Contact" class="form-control" />
+                    <span asp-validation-for="Contact" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group mt-2">
+                <div class="col-md-6">
+                    <input type="submit" class="btn btn-primary" value="Update" />
+                    <a asp-controller="Home" asp-action="Index" class="btn btn-danger btn-block">Cancel</a>
+                </div>
+            </div>
+    </div>
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

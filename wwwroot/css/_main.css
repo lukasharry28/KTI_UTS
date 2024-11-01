@@ -1,0 +1,94 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
+
+body {
+  background-color: #c9d6ff;
+  background: linear-gradient(to right, #e2e2e2, #c9d6ff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+  width: 580px;
+  max-width: 100%;
+  min-height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.container .form-control {
+  background-color: #eee;
+  border: none;
+  margin: 8px 0;
+  padding: 10px 15px;
+  font-size: 14px;
+  border-radius: 6px;
+  width: 100%;
+  outline: none;
+}
+
+
+.form-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 20px 40%;
+  width: 100%;
+}
+
+.container button{
+  background-color: #512da8;
+  color: #fff;
+  font-size: 12px;
+  padding: 8px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-align: center;
+  cursor: pointer;
+  width: 350px;
+  height: auto;
+  margin: 20px 0px;
+}
+
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+h2 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  align-self: flex-start;
+}
+
+.container a{
+  color: #333;
+  font-size: 14px;
+  text-decoration: none;
+  margin: 15px 0 10px;
+  align-items: end;
+  justify-content: end;
+}
+
+.form-check-label {
+  display: flex;
+  align-items: center;
+}
+.Forgot {
+  margin-left: auto;
+  text-decoration: none;
+  color: #007bff;
+}

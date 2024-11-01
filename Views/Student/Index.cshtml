@@ -1,0 +1,29 @@
+@model IEnumerable<A07_UTS.Models.Student>
+@{
+    ViewData["Title"] = "Stundets Data";
+}
+
+<div>
+    <h2>Student</h2>
+    <a asp-controller="Student" asp-action="Create" class="btn btn-primary mt-10">Add</a>
+</div>
+<table class="table table-striped mt-2">
+    <tr>
+        <td>Nim</td>
+        <td>Nama</td>
+        <td>Usia</td>
+        <td>Action</td>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.nim</td>
+            <td>@item.name</td>
+            <td>@item.usia</td>
+            <td>
+                <button class="btn btn-primary"><i class="bi bi-pencil-square"></i> Edit</button>
+                <button class="btn btn-danger"><i class="bi bi-trash-fill"></i> Delete</button>
+            </td>
+        </tr>
+    }
+</table>
