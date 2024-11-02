@@ -66,8 +66,11 @@
     @if (
     ViewContext.RouteData.Values["controller"].ToString() != "Account" || 
     (ViewContext.RouteData.Values["action"].ToString() != "Login" && 
-     ViewContext.RouteData.Values["action"].ToString() != "Register")
-    ) 
+     ViewContext.RouteData.Values["action"].ToString() != "Register" && 
+     ViewContext.RouteData.Values["action"].ToString() != "ForgotPassword" && 
+     ViewContext.RouteData.Values["action"].ToString() != "ConfirmOTP" && 
+     ViewContext.RouteData.Values["action"].ToString() != "ResetPassword")
+    )  
     { 
         <footer class="border-top footer text-muted">
             <div class="container">

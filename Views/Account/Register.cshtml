@@ -14,7 +14,7 @@
 <div class="login-container">
     <div class="right-panel">
         <div class="login-card">
-            <h2>Register</h2>
+            <h3>Register</h3>
             @if (ViewBag.Message != null)
             {
                 <div class="alert alert-success" role="alert">
@@ -45,6 +45,9 @@
                 </div>
                 <div class="button-group mt-2">
                     <button type="submit" class="btn btn-primary btn-block">Submit</button> 
+                </div>
+                 <div class="form-group">
+                    <a asp-asp-controller="Account" asp-action="Login">Back to Login</a>
                 </div>
                 @* <a asp-controller="Account" asp-action="Login" class="btn btn-secondary btn-block">Back</a> *@
             </form>

@@ -132,3 +132,4 @@ D:\UKDW 2022\Semester 5\Program\KTI_2024\UTS\A07_UTS\bin\Debug\net8.0\runtimes\w
 D:\UKDW 2022\Semester 5\Program\KTI_2024\UTS\A07_UTS\bin\Debug\net8.0\runtimes\win-x86\native\e_sqlite3.dll
 D:\UKDW 2022\Semester 5\Program\KTI_2024\UTS\A07_UTS\obj\Debug\net8.0\A07_UTS.csproj.AssemblyReference.cache
 D:\UKDW 2022\Semester 5\Program\KTI_2024\UTS\A07_UTS\obj\Debug\net8.0\A07_UTS.csproj.Up2Date
+D:\UKDW 2022\Semester 5\Program\KTI_2024\UTS\A07_UTS\obj\Debug\net8.0\A07_UTS.sourcelink.json

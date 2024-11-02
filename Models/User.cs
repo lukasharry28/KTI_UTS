@@ -15,4 +15,7 @@ public class User
     public int FailedLoginAttempts { get; set; } = 0;
     public DateTime? LockoutEndTime { get; set; }
 
+    // OTP Properties
+    public string? CurrentOtpCode { get; set; } // OTP yang aktif saat ini
+    public DateTime? OtpExpiration { get; set; } // Kedaluwarsa OTP
 }
