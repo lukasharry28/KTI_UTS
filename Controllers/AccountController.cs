@@ -239,46 +239,11 @@ namespace A07_UTS.Controllers
             return View(model);
         }
 
-        //Tambahan
-
         private string GenerateOTP()
         {
             Random random = new Random();
-            // Menghasilkan 6 digit OTP
             return random.Next(100000, 999999).ToString();
         }
-
-        // private void SendOTPToUser(string email, string otp)
-        // {
-        //     // Ambil konfigurasi dari appsettings.json atau lingkungan
-        //     var fromAddress = new MailAddress("noreply@yourapp.com", "Your App Name"); // Ganti dengan alamat email pengirim yang valid
-        //     var toAddress = new MailAddress(email);
-
-        //     // Mengambil password dan SMTP server dari konfigurasi
-        //     var fromPassword = _configuration["Smtp:Password"]; // Mengambil password dari appsettings.json
-        //     var smtpHost = _configuration["Smtp:Host"]; // Mengambil host dari appsettings.json
-        //     var smtpPort = int.Parse(_configuration["Smtp:Port"]); // Mengambil port dari appsettings.json
-
-        //     const string subject = "Your OTP Code";
-        //     string body = $"Your OTP code is: {otp}";
-
-        //     using (var smtp = new SmtpClient(smtpHost, smtpPort))
-        //     {
-        //         smtp.EnableSsl = true;
-        //         smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
-        //         smtp.UseDefaultCredentials = false;
-        //         smtp.Credentials = new NetworkCredential(fromAddress.Address, fromPassword);
-
-        //         using (var message = new MailMessage(fromAddress, toAddress)
-        //         {
-        //             Subject = subject,
-        //             Body = body
-        //         })
-        //         {
-        //             smtp.Send(message);
-        //         }
-        //     }
-        // }
 
         public void SendOTPToUser(string email, string otp)
         {
@@ -286,14 +251,14 @@ namespace A07_UTS.Controllers
             using (var smtpClient = new SmtpClient(smtpConfig["Host"], int.Parse(smtpConfig["Port"])))
             {
                 smtpClient.Credentials = new NetworkCredential(smtpConfig["Username"], smtpConfig["Password"]);
-                smtpClient.EnableSsl = true; // Enable SSL
+                smtpClient.EnableSsl = true;
 
                 var mailMessage = new MailMessage
                 {
                     From = new MailAddress(smtpConfig["Username"]),
                     Subject = "Your OTP Code",
                     Body = $"Your OTP code is: {otp}",
-                    IsBodyHtml = true // If you want to send HTML email
+                    IsBodyHtml = true 
                 };
                 mailMessage.To.Add(email);
 
@@ -303,7 +268,6 @@ namespace A07_UTS.Controllers
                 }
                 catch (SmtpException ex)
                 {
-                    // Log or handle the exception here
                     Console.WriteLine($"SMTP Exception: {ex.Message}");
                 }
             }
@@ -333,7 +297,6 @@ namespace A07_UTS.Controllers
             }
             catch (Exception ex)
             {
-                // Log error or show a message
                 Console.WriteLine($"Error sending email: {ex.Message}");
             }
         }
@@ -359,7 +322,7 @@ namespace A07_UTS.Controllers
                 SendOTPToUser(user.Email, otpCode);
                 _user.SaveOTP(user.Username, otpCode);
 
-                TempData["Username"] = user.Username; // Pass username to ConfirmOTP page
+                TempData["Username"] = user.Username;
                 return RedirectToAction("ConfirmOTP");
             }
 
@@ -413,7 +376,7 @@ namespace A07_UTS.Controllers
                 return View(model);
             }
 
-            if (!IsValidPassword(model.NewPassword)) // Implement your own validation logic
+            if (!IsValidPassword(model.NewPassword))
             {
                 ModelState.AddModelError("", "Invalid password format.");
                 return View(model);

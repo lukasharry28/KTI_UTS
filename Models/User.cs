@@ -16,6 +16,6 @@ public class User
     public DateTime? LockoutEndTime { get; set; }
 
     // OTP Properties
-    public string? CurrentOtpCode { get; set; } // OTP yang aktif saat ini
-    public DateTime? OtpExpiration { get; set; } // Kedaluwarsa OTP
+    public string? CurrentOtpCode { get; set; }
+    public DateTime? OtpExpiration { get; set; }
 }

@@ -109,8 +109,7 @@ public class UserData : IUser
 
     private string GenerateOtp()
     {
-        // Metode untuk menghasilkan kode OTP, bisa menggunakan random number generator atau algoritma lainnya
-        return new Random().Next(100000, 999999).ToString(); // Contoh menghasilkan OTP 6 digit
+        return new Random().Next(100000, 999999).ToString();
     }
 
     private void SendOtpEmail(string email, string otp)
